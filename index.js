@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const db = require("./config/db");
 const route = require("./src/route");
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 db.connect();
 
