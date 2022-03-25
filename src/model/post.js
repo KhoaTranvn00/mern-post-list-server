@@ -12,6 +12,11 @@ const PostSchema = new Schema({
 		type: "String",
 		default: "",
 	},
+	status: {
+		type: "String",
+		enum: ["TO DO", "DOING", "DONE"],
+		default: "TO DO",
+	},
 	userId: {
 		type: Schema.Types.ObjectId,
 		ref: user,

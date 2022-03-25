@@ -4,7 +4,7 @@ const route = express.Router();
 const Posts = require("../model/post");
 
 route.post("/add", async (req, res) => {
-	const { title, des } = req.body;
+	const { title, des, status } = req.body;
 
 	// simple invalid
 	if (!title) {
@@ -17,6 +17,7 @@ route.post("/add", async (req, res) => {
 		const newPost = new Posts({
 			title,
 			des,
+			status,
 			userId: req.userId,
 		});
 		await newPost.save();
